@@ -4,7 +4,7 @@ set -eo pipefail
 
 cmd="curl --silent --location"
 releases_path="https://pypi.org/pypi/dephell/json"
-parse="python3 -c \"import sys, json; print('\n'.join(sorted(json.loads(sys.stdin.read())['releases'].keys())))\""
+parse="python3 -c \"import sys, json; print('\n'.join(json.loads(sys.stdin.read())['releases'].keys()))\""
 
 sort_versions() {
   sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
