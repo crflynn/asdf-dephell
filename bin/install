@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+curl -sSL https://raw.githubusercontent.com/crflynn/dephell/install-path/install.py | python3 - --version $ASDF_INSTALL_VERSION --path $ASDF_INSTALL_PATH
